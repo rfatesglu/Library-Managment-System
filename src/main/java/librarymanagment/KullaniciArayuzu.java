@@ -3,9 +3,11 @@ package librarymanagment;
     import java.util.Scanner;
 
     public class KullaniciArayuzu {
+       //Library nesnesi kitapların yönetildiği system
         private Library library;
         private Scanner scanner;
 
+      //yapıcı metod
         public KullaniciArayuzu() {
             this.library = new Library();
             this.scanner = new Scanner(System.in);
@@ -13,6 +15,7 @@ package librarymanagment;
 
         public void baslat() {
             while (true) {
+                //ana menü şeçeneklerini ekrana yazdırır
                 System.out.println("**KÜTÜPHANE MENÜSÜ**");
                 System.out.println("1️⃣ Kitap Ekle");
                 System.out.println("2️⃣ Kitapları Listele");
@@ -24,6 +27,7 @@ package librarymanagment;
 
                 String secim = scanner.nextLine().trim();
 
+                //kullanıcının şeçimlerine uygum metod çağırır
                 switch (secim) {
                     case "1":
                         kitapEkle();
@@ -48,7 +52,7 @@ package librarymanagment;
                 }
             }
         }
-
+//kullanıcıdan kitap adı ve yazar adı istenir.
         private void kitapEkle() {
             System.out.print(" Kitap adı: ");
             String isim = scanner.nextLine().trim();
